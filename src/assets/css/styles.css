@@ -1,0 +1,455 @@
+/* Cargar fuentes */
+@font-face{
+    font-family: 'Poppins';
+    src: url(fonts/Poppins-Regular.ttf);
+}
+
+/* Estilos generales */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+body::-webkit-scrollbar{
+    width: 10px;
+    background: #080808;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgba(31, 169, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* Estilos loader */
+#loader-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #262626;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10000;
+}
+.loader{
+    width: 140px;
+    height: 140px;
+    border: solid 5px #fff;
+    border-top: solid 5px #1FA9FF;
+    border-radius: 50%;
+    animation: loader 0.8s linear infinite;
+}
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.loader-icon{
+    position: absolute;
+    color: #ababab;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: message 1s alternate infinite ease-in-out;
+}
+.loader-message{
+    position: absolute;
+    color: #ababab;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: message 1s alternate infinite ease-in-out;
+}
+@keyframes message{
+    0%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* Estilos navbar y home */
+#home{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 10%;
+    background: #080808;
+    z-index: 9999;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #1FA9FF;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+nav .btn-cv{
+    display: block;
+    width: fit-content;
+    border: 1px solid #1FA9FF;
+    padding: 5px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+nav .btn-cv:hover{
+    background: #1FA9FF;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #1FA9FF;
+}
+
+/* Estilos about */
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+    background: #262626;
+    padding-top: 15px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.about-col-2 .description{
+    text-align: justify;
+    margin-right: 17px;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+    justify-content: space-between;
+    text-align: center;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #1FA9FF;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin-bottom: 25px;
+}
+.tab-contents ul li span{
+    color: #1FA9FF;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+/* Estilos stack */
+#stacks{
+    padding: 30px 0;
+}
+#stacks .container h1{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+#stacks .container .name-stack{
+    color: #1FA9FF;
+    margin-top: 30px;
+}
+.stacks-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+    grid-gap: 40px;
+    margin-top: 30px;
+}
+.stacks-list div{
+    background: #262626;
+    padding: 40px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 15px;
+    transition: background 0.5s, transform 0.5s;
+}
+.stacks-list div i{
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.tab-links div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.stacks-list div a{
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.stacks-list div:hover{
+    background: #1FA9FF;
+    transform: translateY(-10px);
+}
+
+/* Estilos contact */
+.contact-aling{
+    flex-basis: 100%;
+    text-align: center;
+}
+.contact-aling .sub-title{
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.contact-aling .contact-icon{
+    font-size: 50px;
+    margin-bottom: 5px;
+    color: #1FA9FF;
+}
+.contact-aling p{
+    margin-bottom: 30px;
+}
+.contact-aling p i{
+    color: #1FA9FF;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.icons-social{
+    margin-top: 40px;
+}
+.icons-social a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.icons-social a:hover{
+    color: #1FA9FF;
+    transform: translateY(-5px);
+}
+
+/* Estilos button-up */
+#button-up{
+    width: 60px;
+    height: 60px;
+    background: #1FA9FF;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 0.5s ease;
+    transform: scale(0);
+}
+#button-up:hover{
+    transform: scale(1.1);
+    border-color: #262626;
+}
+
+/* Estilos footer */
+footer .footer{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+footer .footer span{
+    color: #1FA9FF;
+}
+footer .footer i{
+    color: red;
+    margin: 7px;
+}
+
+/* Estilos responsive */
+nav .fa-solid{
+    display: none;
+}
+@media only screen and (max-width: 950px){
+    #home{
+        background-image: url(../img/background2.jpg);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 23px;
+    }
+    nav{
+        padding: 10px 10%;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #1FA9FF;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    nav .fa-solid{
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    /* responsive-about */
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-titles{
+        text-align: center;
+        align-items: center;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .tab-contents ul li{
+        margin-right: 20px;
+    }
+
+    /* otros-responsive */
+    .contact-aling{
+        flex-basis: 100%;
+    }
+    .icons-social a{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .footer{
+        font-size: 14px;
+    }
+    #button-up{
+        width: 50px;
+        height: 50px;
+        font-size: 15px;
+        bottom: 60px;
+        right: 20px;
+    }
+}

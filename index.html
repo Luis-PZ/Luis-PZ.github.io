@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es_mx">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="src/assets/css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="src/assets/css/styles.css">
+    <title>My Profile</title>
+</head>
+<body>
+    <!-- Estructura loader -->
+    <div id="loader-container">
+        <div class="loader"></div>
+        <p class="loader-icon"><i class="fa-solid fa-wifi"></i></p>
+        <p class="loader-message">Cargando</p>
+    </div>
+    <!-- Estructura home -->
+    <div id="home">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#home" onclick="closemenu()">Inicio</a></li>
+                    <li><a href="#about" onclick="closemenu()">Sobre mí</a></li>
+                    <li><a href="#stacks" onclick="closemenu()">Mis Stacks</a></li>
+                    <li><a href="#contact" onclick="closemenu()">Contacto</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <a href="#" class="btn-cv">Descargar mi CV</a>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Desarrollador Web</p>
+                <h1>Bienvenido, soy<br><span class="element-typed"></span></h1>
+            </div>
+        </div>
+    </div>
+    <!-- Estructura about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="src/assets/img/profile.jpg" alt="Luis Aguilar">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">Sobre mi</h1>
+                    <p class="description">Mi nombre completo Luis Enrique Aguilar Vives y tengo 23 años, proveniente de Veracruz, actualmente egresado de la carrera de Ing. en Sistemas Computacionales y aspiro a ser desarrollador web. </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Habilidades Web</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experiencia Laboral</p>
+                        <p class="tab-links" onclick="opentab('education')">Educación</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Lenguajes de Programación</span><br>HTML, CSS, JavaScript, TypeScript, PHP, Python.</li>
+                        </ul>
+                        <ul>
+                            <li><span>Frameworks</span><br>Angular, Django, Laravel, Symfony, Bootstrap</li>
+                        </ul>
+                        <ul>
+                            <li><span>Base de Datos</span><br>MySQL, PostgreSQL, MongoDB</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>EKS Solutions</span> (2023 - 2023)<br>Estructurar, relacionar y desarrollar base de datos en Oracle.</li>
+                        </ul>
+                        <ul>
+                            <li><span>Megacable</span> (2022 - 2022)<br>Atención al cliente, Vendedor, Soporte.</li>
+                        </ul>
+                        <ul>
+                            <li><span>Laboratorio Nacional de Informática Avanzada (LANIA)</span> (2021 - 2022)<br>Desarrollo de proyectos en Django con base de datos PostgreSQL.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Instituto Tecnológico Superior de Cosamaloapan (ITSCO)</span><br>2017 - 2022</li>
+                        </ul>
+                        <ul>
+                            <li><span>Escuela Secundaria y de Bachilleres Luis A. Beuregard</span><br>2014 - 2017</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Estructura stack -->
+    <div id="stacks">
+        <div class="container">
+            <h1>Mis tecnologías para el desarrollo web</h1>
+            <h2 class="name-stack">MEAN Stack</h2>
+            <div class="stacks-list">
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    <h2>MongoDB</h2>
+                    <p>
+                        Es un sistema de base de datos NoSQL, orientado a documentos y de código abierto.
+                    </p>
+                    <a href="https://www.mongodb.com/docs/" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-node-js"></i>
+                    <h2>Express.js</h2>
+                    <p>
+                        Es un entorno de trabajo para aplicaciones web para el programario Node.js, de código abierto y con licencia MIT.
+                    </p>
+                    <a href="https://expressjs.com/" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-angular"></i>
+                    <h2>Angular</h2>
+                    <p>
+                        Es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, se utiliza para crear y mantener aplicaciones web de una sola página.
+                    </p>
+                    <a href="https://angular.io/docs" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-node"></i>
+                    <h2>NodeJS</h2>
+                    <p>
+                        Es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScript.
+                    </p>
+                    <a href="https://nodejs.org/es/docs" target="_blank">Leer más</a>
+                </div>
+            </div>
+            <h2 class="name-stack">WAMP Stack</h2>
+            <div class="stacks-list">
+                <div>
+                    <i class="fa-brands fa-windows"></i>
+                    <h2>Windows</h2>
+                    <p>
+                        Es el nombre de una familia de distribuciones de software para PC, servidores, sistemas empotrados.
+                    </p>
+                    <a href="https://www.microsoft.com/es-mx/windows/windows-11" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-server"></i>
+                    <h2>Apache</h2>
+                    <p>
+                        Es un servidor web HTTP de código abierto, que implementa el protocolo HTTP/1.1 y la noción de sitio virtual.
+                    </p>
+                    <a href="https://httpd.apache.org/docs/" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    <h2>MySQL</h2>
+                    <p>
+                        Es un sistema de gestión de bases de datos relacional.
+                    </p>
+                    <a href="https://dev.mysql.com/doc/" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-php"></i>
+                    <h2>PHP</h2>
+                    <p>
+                        Es un lenguaje de programación interpretado del lado del servidor y de uso general que se adapta especialmente al desarrollo web.
+                    </p>
+                    <a href="https://www.php.net/manual/es/intro-whatis.php" target="_blank">Leer más</a>
+                </div>
+            </div>
+            <h2 class="name-stack">Django Stack</h2>
+            <div class="stacks-list">
+                <div>
+                    <i class="fa-brands fa-python"></i>
+                    <h2>Python</h2>
+                    <p>
+                        Es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.
+                    </p>
+                    <a href="https://www.python.org/doc/" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-python"></i>
+                    <h2>Django</h2>
+                    <p>
+                        Es un framework de desarrollo web de código abierto, escrito en Python, que respeta el patrón de diseño conocido como modelo-vista-controlador.
+                    </p>
+                    <a href="https://docs.djangoproject.com/en/4.2/" target="_blank">Leer más</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    <h2>PostgreSQL</h2>
+                    <p>
+                        Es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto.
+                    </p>
+                    <a href="https://www.postgresql.org/docs/" target="_blank">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Estructura contact -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-aling">
+                    <h1 class="sub-title">Contacto</h1>
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope fa-shake"></i>
+                    </div>
+                    <p>dev.luisaguilar26@gmail.com</p>
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-mobile-screen fa-shake"></i>
+                    </div>
+                    <p>(+52) 288 140 8041</p>
+                    <div class="icons-social">           
+                        <a href="https://instagram.com/laguilar_06?igshid=MzNlNGNkZWQ4Mg=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100077525577643&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com/laguilar_06?t=YCLPBVjZ4PAOmvJaDhVIVw&s=09"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Estructura button-up -->
+    <div id="button-up">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+    <!-- Estructura footer -->
+    <footer>
+        <div class="footer">
+            <P>
+                <i class="fa-solid fa-heart fa-bounce"></i>
+                Sitio web desarrollado por <span>Luis Aguilar&copy;</span>
+                <i class="fa-solid fa-heart fa-bounce"></i>
+            </P>        
+        </div>
+    </footer>
+    <script src="src/assets/js/typed.js"></script>
+    <script src="src/assets/js/animation.js"></script>
+    <script src="src/assets/js/loader.js"></script>
+    <script src="src/assets/js/sidebar.js"></script>
+    <script src="src/assets/js/about.js"></script>
+    <script src="src/assets/js/scroll-up.js"></script>
+</body>
+</html>
